@@ -1,8 +1,12 @@
 [tool.poetry]
-name = "rembg-lib"
+name = "rembglib"
 version = "0.1.0"
 description = ""
 authors = ["Alejandro P. Hall <alejandro.polvillo@myrealfood.app>"]
+packages = [
+    { include = "rembglib" },
+    { include = "rembglib/**/*.py" },
+]
 
 [tool.poetry.dependencies]
 python = "~3.9"
