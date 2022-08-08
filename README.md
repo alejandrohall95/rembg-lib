@@ -47,53 +47,6 @@ CPU support:
 pip install rembg
 ```
 
-GPU support:
-```bash
-pip install rembg[gpu]
-```
-
-### Usage as a cli
-
-Remove the background from a remote image
-```bash
-curl -s http://input.png | rembg i > output.png
-```
-
-Remove the background from a local file
-```bash
-rembg i path/to/input.png path/to/output.png
-```
-
-Remove the background from all images in a folder
-```bash
-rembg p path/to/input path/to/output
-```
-
-### Usage as a server
-
-Start the server
-```bash
-rembg s
-```
-
-Image with background:
-```
-https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/1280px-Gull_portrait_ca_usa.jpg
-```
-
-Image without background:
-```
-http://localhost:5000/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/1280px-Gull_portrait_ca_usa.jpg
-```
-
-Also you can send the file as a FormData (multipart/form-data):
-```html
-<form action="http://localhost:5000" method="post" enctype="multipart/form-data">
-   <input type="file" name="file"/>
-   <input type="submit" value="upload"/>
-</form>
-```
-
 ### Usage as a library
 
 Input and output as bytes
@@ -136,24 +89,6 @@ output = remove(input)
 cv2.imwrite(output_path, output)
 ```
 
-### Usage as a docker
-
-Try this:
-
-```
-docker run -p 5000:5000 danielgatis/rembg s
-```
-
-Image with background:
-```
-https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/1280px-Gull_portrait_ca_usa.jpg
-```
-
-Image without background:
-```
-http://localhost:5000/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/1280px-Gull_portrait_ca_usa.jpg
-```
-
 ### Models
 
 All models are downloaded and saved in the user home folder in the `.u2net` directory.
@@ -169,30 +104,6 @@ The available models are:
 
 If You need more fine tunned models try this:
 https://github.com/danielgatis/rembg/issues/193#issuecomment-1055534289
-
-### Advance usage
-
-Sometimes it is possible to achieve better results by turning on alpha matting. Example:
-```bash
-curl -s http://input.png | rembg i -a -ae 15 > output.png
-```
-
-<table>
-    <thead>
-        <tr>
-            <td>Original</td>
-            <td>Without alpha matting</td>
-            <td>With alpha matting (-a -ae 15)</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><img src="https://raw.githubusercontent.com/danielgatis/rembg/master/examples/food-1.jpg"/></td>
-            <td><img src="https://raw.githubusercontent.com/danielgatis/rembg/master/examples/food-1.out.jpg"/></td>
-            <td><img src="https://raw.githubusercontent.com/danielgatis/rembg/master/examples/food-1.out.alpha.jpg"/></td>
-        </tr>
-    </tbody>
-</table>
 
 ### In the cloud
 
