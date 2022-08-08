@@ -5,4 +5,4 @@ include setup.py
 include pyproject.toml
 
 include versioneer.py
-include rembg/_version.py
+include rembglib/_version.py

@@ -1,4 +1,4 @@
-# Rembg
+# Rembglib
 
 [![Downloads](https://pepy.tech/badge/rembg)](https://pepy.tech/project/rembg)
 [![Downloads](https://pepy.tech/badge/rembg/month)](https://pepy.tech/project/rembg/month)
@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://img.shields.io/badge/License-MIT-blue.svg)
 [![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/KenjieDec/RemBG)
 
-Rembg is a tool to remove images background. That is it.
+Rembglib is a tool to remove images background. That is it.
 
 <p style="display: flex;align-items: center;justify-content: center;">
   <img src="https://raw.githubusercontent.com/danielgatis/rembg/master/examples/car-1.jpg" width="100" />
@@ -44,14 +44,14 @@ Rembg is a tool to remove images background. That is it.
 
 CPU support:
 ```bash
-pip install rembg
+pip install rembglib
 ```
 
 ### Usage as a library
 
 Input and output as bytes
 ```python
-from rembg import remove
+from rembglib import remove
 
 input_path = 'input.png'
 output_path = 'output.png'
@@ -65,7 +65,7 @@ with open(input_path, 'rb') as i:
 
 Input and output as a PIL image
 ```python
-from rembg import remove
+from rembglib import remove
 from PIL import Image
 
 input_path = 'input.png'
@@ -78,7 +78,7 @@ output.save(output_path)
 
 Input and output as a numpy array
 ```python
-from rembg import remove
+from rembglib import remove
 import cv2
 
 input_path = 'input.png'
